@@ -1,9 +1,9 @@
 import React from "react";
 
-const Login = () => {
+const Analytics = () => {
     return (
-        <div>Login Page</div>
+        <div>Analytics Page</div>
     )
 }
 
-export default Login
+export default Analytics
