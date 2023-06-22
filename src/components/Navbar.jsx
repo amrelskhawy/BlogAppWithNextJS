@@ -39,19 +39,19 @@ const routes = [
 const Navbar = () => {
 
   return (
-    <nav>
-      <Link href={'/'}>Bloggy!</Link>
-      <div>
+    <nav className='h[100px] flex justify-between items-center '>
+      <Link className='font-bold  text-xl' href={'/'}>Bloggy!</Link>
+      <div className='flex items-center gap-5'>
         {routes.map(link => (
           <Link key={link.id} href={link.url}>
             {link.title}
           </Link>
         )
         )}
-      </div>
-      <button onClick={() => {}}>
+      <button className='p-1 bg-[#53c284] text-white cursor-pointer rounded px-3 ' onClick={() => {}}>
         Logout
       </button>
+      </div>
     </nav>
   )
 }
