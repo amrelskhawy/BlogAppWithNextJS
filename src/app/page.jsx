@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Hero from "public/hero.png"
+import Button from "@/components/Button";
+
 export default function Home() {
   return (
       <div className="grid grid-cols-2 gap-4 my-28">
@@ -10,12 +12,12 @@ export default function Home() {
           <p className="text-2xl font-[300] ">
             Turinig your Idea into reality. We bring together the teams from the global tech industry
           </p>
-          <button className="bg-[#53c284] p-5 cursor-pointer text-white max-w-max font-bold rounded">
-            See Our Works !
-          </button>
+          <Button url="/portfolio" text="See Our Works !"  />
         </div>
         <div className="w-full ">
-          <Image className="w-[75%] mx-auto" src={Hero} alt="" />
+          <Image className="w-[75%] mx-auto" src={Hero} alt="" style={{
+              animation: "upDown 3s ease alternate infinite"
+            }} />
         </div>
       </div>
   )
