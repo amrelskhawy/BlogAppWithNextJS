@@ -45,18 +45,15 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             quae dolor, optio voluptatibus magnam iure esse tempora beatae, a
             suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
-            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. -
-            
-            <br />
-            <br /> - Creative Illustrations
-            <br />
-            <br /> - Dynamic Websites
-            <br />
-            <br /> - Fast and Handy
-            <br />
-            <br /> - Mobile Apps
+            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <Button url="/contact" text="Contact" />
+            <ul className="flex flex-col gap-3 my-8 mt-3">
+              <li>- Creative Illustrations</li>
+              <li>- Dynamic Websites</li>
+              <li>- Fast and Handy</li>
+              <li>- Mobile Apps</li>
+            </ul>
+          <Button  url="/contact" text="Contact" />
         </div>
         {/* What We Do? */}
       </div>
