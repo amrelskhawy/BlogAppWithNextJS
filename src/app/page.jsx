@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 
 export default function Home() {
   return (
-      <div className="grid grid-cols-2 gap-4 my-28">
+      <div className="grid grid-cols-2 gap-4">
         <div className="w-full flex flex-col justify-between text-left">
           <h1 className="text-7xl bg-gradient-to-b from-[#194c33] to-[#bbb] bg-clip-text text-transparent font-bold">
             Better design for your digital products.
