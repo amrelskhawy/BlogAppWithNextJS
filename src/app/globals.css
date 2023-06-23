@@ -39,6 +39,11 @@ a {
   }
 }
 
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 @keyframes move {
   from {
     transform: translateY(-15px);
