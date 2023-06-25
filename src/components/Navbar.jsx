@@ -1,6 +1,7 @@
 "use client"
-import React from 'react'
+import React  , {useContext} from 'react'
 import Link from 'next/link'
+import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
 
 const routes = [
   {
@@ -42,6 +43,7 @@ const Navbar = () => {
     <nav className='h[100px] flex justify-between items-center '>
       <Link className='font-bold  text-xl' href={'/'}>Bloggy!</Link>
       <div className='flex items-center gap-5'>
+      <DarkModeToggle />
         {routes.map(link => (
           <Link key={link.id} href={link.url}>
             {link.title}
