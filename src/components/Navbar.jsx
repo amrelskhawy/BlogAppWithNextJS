@@ -1,5 +1,5 @@
 "use client"
-import React  , {useContext} from 'react'
+import React from 'react'
 import Link from 'next/link'
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
 
@@ -45,12 +45,15 @@ const Navbar = () => {
       <div className='flex items-center gap-5'>
       <DarkModeToggle />
         {routes.map(link => (
-          <Link key={link.id} href={link.url}>
+          <Link 
+            className='hover:text-[#53c284] transition-all' 
+            key={link.id} href={link.url}>
             {link.title}
           </Link>
-        )
-        )}
-      <button className='p-1 bg-[#53c284] text-white cursor-pointer rounded px-3 ' onClick={() => {}}>
+        ))}
+      <button 
+        className='p-1 bg-[#53c284] text-white
+          cursor-pointer rounded px-3 '>
         Logout
       </button>
       </div>
