@@ -3,6 +3,13 @@ import Image from "next/image";
 import React from "react";
 import ContactImg from "/public/contact.png"
 import Button from "@/components/Button";
+
+export const metadata = {
+  title: 'Contact Us',
+  description: 'We Wait From You',
+}
+
+
 const Contact = () => {
   return (
     <div>
