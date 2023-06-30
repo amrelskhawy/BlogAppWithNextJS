@@ -4,6 +4,7 @@ import Link from 'next/link'
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
 import {signOut, useSession} from "next-auth/react";
 import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 const routes = [
   {
@@ -41,6 +42,7 @@ const routes = [
 
 const Navbar = () => {
   const {status} = useSession()
+  const router = useRouter()
   return (
     <nav className='h[100px] flex justify-between items-center '>
       <Link className='font-bold  text-xl' href={'/'}>Bloggy!</Link>
@@ -57,7 +59,8 @@ const Navbar = () => {
           status === "unauthenticated" ?
               <button
                   onClick={() =>
-                      signIn("google")}
+                      router.push('/dashboard/login')
+                    }
                   className='p-1 bg-[#53c284] text-white
                     cursor-pointer rounded px-3 '>
                 Sign In
