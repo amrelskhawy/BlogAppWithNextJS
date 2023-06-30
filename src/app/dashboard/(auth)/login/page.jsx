@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import {signIn} from "next-auth/react";
+import {AiOutlineGoogle} from "react-icons/ai";
 
 const LoginInputs = [
     {
@@ -41,10 +42,9 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const credentials = formData
         try {
-            signIn("credentials", {
-                email,password
-            })
+            signIn("credentials", credentials)
         } catch (e) {
             setErr(e.message)
         }
@@ -71,7 +71,15 @@ const Login = () => {
                         </div>
                     ))
                 }
-                <button className='p-2 bg-[#53c284] text-white mt-4 rounded-lg ' type="submit">Login</button>
+                <div className="btns grid grid-cols-3 gap-2">
+                <button className='p-2 bg-[#53c284] text-white mt-4 rounded-lg col-span-2 ' type="submit">Login</button>
+                <button
+                    onClick={() => signIn('google')}
+                    className='p-2 bg-[#53c284] text-center text-xl justify-center flex items-center text-white mt-4 rounded-lg ' >
+                    <AiOutlineGoogle />
+                </button>
+
+                </div>
             </form>
 
             <p>{err}</p>
