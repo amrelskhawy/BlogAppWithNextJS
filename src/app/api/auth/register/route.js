@@ -7,18 +7,19 @@ import User from "@/models/User";
 
 export const POST = async (request) => {
     // fetch
-    try {
         const {name, email,password} = await request.json()
 
-        const hashedPassword = await bcrypt.hash(password,5)
+        const hashedPassword = await bcrypt.hash(password, 5);
 
         await connect();
 
         const newUser = new User({
             name,
-            password: hashedPassword,
-            email
+            email,
+            password: hashedPassword
         })
+
+        try {
 
         await newUser.save();
 
