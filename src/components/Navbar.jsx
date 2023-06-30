@@ -2,6 +2,8 @@
 import React from 'react'
 import Link from 'next/link'
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
+import {signOut, useSession} from "next-auth/react";
+import {signIn} from "next-auth/react";
 
 const routes = [
   {
@@ -38,7 +40,7 @@ const routes = [
 ]
 
 const Navbar = () => {
-
+  const {status} = useSession()
   return (
     <nav className='h[100px] flex justify-between items-center '>
       <Link className='font-bold  text-xl' href={'/'}>Bloggy!</Link>
@@ -51,11 +53,22 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-      <button 
-        className='p-1 bg-[#53c284] text-white
+        {
+          status === "unauthenticated" ?
+              <button
+                  onClick={() =>
+                      signIn("google")}
+                  className='p-1 bg-[#53c284] text-white
+                    cursor-pointer rounded px-3 '>
+                Sign In
+              </button>
+              :<button
+                  onClick={() => signOut()}
+                  className='p-1 bg-[#53c284] text-white
           cursor-pointer rounded px-3 '>
-        Logout
-      </button>
+                Logout
+              </button>
+        }
       </div>
     </nav>
   )
