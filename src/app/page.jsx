@@ -2,6 +2,11 @@ import Image from "next/image";
 import Hero from "public/hero.png"
 import Button from "@/components/Button";
 
+export const metadata = {
+    title: 'Blog App',
+    description: 'Say What you want freely',
+}
+
 export default function Home() {
   return (
       <div className="grid grid-cols-2 gap-4">
