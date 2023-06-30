@@ -63,3 +63,13 @@ section {
     transform: translateY(0px) scale(1.03);
   }
 }
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
