@@ -1,7 +1,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { notFound } from "next/navigation"
+
 
 const getData = async ({ id }) => {
   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
@@ -39,7 +39,6 @@ const BlogPost = async ({ params }) => {
           <br />
           <p className="text-xl font-[300]">
             {data.desc}
-
           </p>
           <div className="flex items-center relative gap-3">
             <Image
@@ -60,7 +59,7 @@ const BlogPost = async ({ params }) => {
             alt=""
             loading="lazy"
             fill={true}
-            className="object-cover "
+            className="object-cover object-top "
           />
         </div>
       </div>
