@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({ title, placeholder, type }) => {
+const Input = ({ title, placeholder, ...other }) => {
   return (
     <div>
       <label htmlFor={title}>{title}</label>
@@ -8,7 +8,7 @@ const Input = ({ title, placeholder, type }) => {
         className='p-5 w-full outline-none  border-[3px] border-[#bbb] text-[#bbb] bg-transparent'
         id={title}
         placeholder={placeholder}
-        type={type ? type : 'text'}
+        {...other}
       />
     </div>
   )
