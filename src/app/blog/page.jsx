@@ -31,13 +31,12 @@ const Blog = async () => {
       {
         data.map(post => (
           <Link key={post._id} className="flex  items-center gap-12 mb-12" href={"blog/"+ post._id } >
-            <div className="">
+            <div className="relative w-[400px] h-[200px]">
               <Image
                 src={post.img}
                 alt=""
-                width={400}
-                height={250}
-                className="object-cover flex-1"
+                fill={true}
+                className="object-cover  flex-1"
               />
             </div>
             <div className="flex-1">
