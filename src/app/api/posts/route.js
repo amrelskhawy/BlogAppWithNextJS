@@ -27,3 +27,23 @@ export const GET = async (request) => {
     })
   }
 }
+
+export const POST = async (request) => {
+    const body = await request.json()
+    const newPosts = Post(body)  
+    try {
+
+      await connect()
+      newPosts.save()
+
+    return new NextResponse("Post has been created" , {
+        status: 201
+      })
+
+    } catch (error) {
+      return new NextResponse("Database Error", {
+        status: 500
+      })
+    }
+
+}
