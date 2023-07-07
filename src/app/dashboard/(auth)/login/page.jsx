@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {signIn} from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 import {AiOutlineGoogle} from "react-icons/ai";
 
 const LoginInputs = [
@@ -20,6 +20,12 @@ const LoginInputs = [
         required: true
     }
 ]
+
+export const metadata = {
+    title: "Login",
+    description: 'Login to can maintain and control your posts'
+}
+
 const Login = () => {
 
     const [err, setErr] = useState("");
@@ -29,6 +35,8 @@ const Login = () => {
         "email": '',
         "password": '',
     })
+
+    const  {status} = useSession()
 
     const handleChange = (e) => {
         const {value, name} = e.target
@@ -50,6 +58,11 @@ const Login = () => {
         }
     }
 
+    if (status === "authenticated") {
+        router?.push("/dashboard");
+    }
+
+    else {
 
     return (
         <div className='w-full max-w-[400px] h-fit p-4  grid mx-auto '>
@@ -89,6 +102,8 @@ const Login = () => {
             </Link>
         </div>
     )
+    }
+
 }
 
 export default Login
