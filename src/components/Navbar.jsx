@@ -56,19 +56,10 @@ const Navbar = () => {
           </Link>
         ))}
         {
-          status === "unauthenticated" ?
-              <button
-                  onClick={() =>
-                      router.push('/dashboard/login')
-                    }
-                  className='p-1 bg-[#53c284] text-white
-                    cursor-pointer rounded px-3 '>
-                Sign In
-              </button>
-              :<button
+          status === "authenticated" && <button
                   onClick={() => signOut()}
                   className='p-1 bg-[#53c284] text-white
-          cursor-pointer rounded px-3 '>
+                      cursor-pointer rounded px-3 '>
                 Logout
               </button>
         }
